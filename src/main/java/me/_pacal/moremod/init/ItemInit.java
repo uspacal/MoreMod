@@ -18,6 +18,7 @@ import java.util.function.Supplier;
 @ObjectHolder(MoreMod.MOD_ID)
 public class ItemInit {
     public static final Item ruby = null;
+    public static final Item ruby_shard = null;
     public static final Item ruby_cookie = null;
     public static final Item ruby_sword = null;
     public static final Item ruby_pickaxe = null;
@@ -34,6 +35,8 @@ public class ItemInit {
     public static void registerItems(final RegistryEvent.Register<Item> event) {
         event.getRegistry().register(new Item(new Item.Properties().
                 group(MoreMod.MoreModItemGroup.TAB)).setRegistryName("ruby"));
+        event.getRegistry().register(new Item(new Item.Properties().
+                group(MoreMod.MoreModItemGroup.TAB)).setRegistryName("ruby_shard"));
         event.getRegistry().register(new Item(new Item.Properties().
                 group(MoreMod.MoreModItemGroup.TAB).
                 food(new Food.Builder().
