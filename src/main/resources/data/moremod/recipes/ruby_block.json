@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "moremod:ruby"
+    }
+  },
+  "result": {
+    "item": "moremod:ruby_block"
+  }
+}

@@ -33,10 +33,13 @@ public class ItemInit {
 
     @SubscribeEvent
     public static void registerItems(final RegistryEvent.Register<Item> event) {
+        // Ruby
         event.getRegistry().register(new Item(new Item.Properties().
                 group(MoreMod.MoreModItemGroup.TAB)).setRegistryName("ruby"));
+        //ruby shard
         event.getRegistry().register(new Item(new Item.Properties().
                 group(MoreMod.MoreModItemGroup.TAB)).setRegistryName("ruby_shard"));
+        // ruby cookie
         event.getRegistry().register(new Item(new Item.Properties().
                 group(MoreMod.MoreModItemGroup.TAB).
                 food(new Food.Builder().
@@ -45,34 +48,34 @@ public class ItemInit {
                         effect(new EffectInstance(Effects.INSTANT_HEALTH, 255), 1f).build()))
                 .setRegistryName("ruby_cookie"));
         //tools
-        event.getRegistry().register(new SwordItem(ModItemTier.RUBY, 8, -0.8F, new Item.Properties().
+        event.getRegistry().register(new SwordItem(ModItemTier.RUBY, 4, -0.8F, new Item.Properties().
                 group(MoreMod.MoreModItemGroup.TAB)).setRegistryName("ruby_sword"));
-        event.getRegistry().register(new PickaxeItem(ModItemTier.RUBY, 5, -1.6F, new Item.Properties().
+        event.getRegistry().register(new PickaxeItem(ModItemTier.RUBY, 1, -1.6F, new Item.Properties().
                 group(MoreMod.MoreModItemGroup.TAB)).setRegistryName("ruby_pickaxe"));
-        event.getRegistry().register(new AxeItem(ModItemTier.RUBY, 10, -2.0F, new Item.Properties().
+        event.getRegistry().register(new AxeItem(ModItemTier.RUBY, 6, -2.0F, new Item.Properties().
                 group(MoreMod.MoreModItemGroup.TAB)).setRegistryName("ruby_axe"));
-        event.getRegistry().register(new ShovelItem(ModItemTier.RUBY, 5.5F, -2.0F, new Item.Properties().
+        event.getRegistry().register(new ShovelItem(ModItemTier.RUBY, 1.5F, -2.0F, new Item.Properties().
                 group(MoreMod.MoreModItemGroup.TAB)).setRegistryName("ruby_shovel"));
         event.getRegistry().register(new HoeItem(ModItemTier.RUBY, -2.0F, new Item.Properties().
                 group(MoreMod.MoreModItemGroup.TAB)).setRegistryName("ruby_hoe"));
         //double Tools
-        event.getRegistry().register(new SwordItem(ModItemTier.DOUBLERUBY, 8, -0.8F, new Item.Properties().
+        event.getRegistry().register(new SwordItem(ModItemTier.DOUBLERUBY, 6, -0.8F, new Item.Properties().
                 group(MoreMod.MoreModItemGroup.TAB)).setRegistryName("ruby_double_sword"));
-        event.getRegistry().register(new PickaxeItem(ModItemTier.DOUBLERUBY, 6, -1.6F, new Item.Properties().
+        event.getRegistry().register(new PickaxeItem(ModItemTier.DOUBLERUBY, 4, -1.6F, new Item.Properties().
                 group(MoreMod.MoreModItemGroup.TAB)).setRegistryName("ruby_double_pickaxe"));
-        event.getRegistry().register(new AxeItem(ModItemTier.DOUBLERUBY, 10, -2.0F, new Item.Properties().
+        event.getRegistry().register(new AxeItem(ModItemTier.DOUBLERUBY, 8, -2.0F, new Item.Properties().
                 group(MoreMod.MoreModItemGroup.TAB)).setRegistryName("ruby_double_axe"));
-        event.getRegistry().register(new ShovelItem(ModItemTier.DOUBLERUBY, 6.5F, -2.0F, new Item.Properties().
+        event.getRegistry().register(new ShovelItem(ModItemTier.DOUBLERUBY, 3.5F, -2.0F, new Item.Properties().
                 group(MoreMod.MoreModItemGroup.TAB)).setRegistryName("ruby_double_shovel"));
         event.getRegistry().register(new HoeItem(ModItemTier.DOUBLERUBY, -2.0F, new Item.Properties().
                 group(MoreMod.MoreModItemGroup.TAB)).setRegistryName("ruby_double_hoe"));
     }
 
     public enum ModItemTier implements IItemTier {
-        RUBY(4, 3122, 15.0F, 1, 100, () -> {
+        RUBY(4, 3122, 15.0F, 5, 100, () -> {
             return Ingredient.fromItems(ItemInit.ruby);
         }),
-        DOUBLERUBY(4, 6244, 30.0F, 1, 150, () -> {
+        DOUBLERUBY(4, 6244, 30.0F, 7, 150, () -> {
             return Ingredient.fromItems(ItemInit.ruby);
         });
 

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#X#"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:wheat"
+    },
+    "X": {
+      "item": "moremod:ruby_shard"
+    }
+  },
+  "result": {
+    "item": "moremod:ruby_cookie",
+    "count": 8
+  }
+}

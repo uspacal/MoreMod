@@ -3,14 +3,17 @@ package me._pacal.moremod;
 
 import me._pacal.moremod.init.BlockInit;
 import me._pacal.moremod.init.ItemInit;
+import me._pacal.moremod.world.gen.ModOreGen;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
+import net.minecraft.world.gen.feature.OreFeatureConfig;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.minecraftforge.fml.event.lifecycle.FMLLoadCompleteEvent;
 import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
@@ -20,6 +23,7 @@ import java.util.stream.Collectors;
 
 
 @Mod("moremod")
+@Mod.EventBusSubscriber (modid = MoreMod.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class MoreMod {
     private static final Logger LOGGER = LogManager.getLogger();
     public static final String MOD_ID = "moremod";
@@ -35,7 +39,9 @@ public class MoreMod {
         MinecraftForge.EVENT_BUS.register(this);
     }
 
+
     private void setup(final FMLCommonSetupEvent event) {
+
     }
 
     private void doClientStuff(final FMLClientSetupEvent event) {
@@ -45,6 +51,10 @@ public class MoreMod {
     @SubscribeEvent
     public void onServerStarting(FMLServerStartingEvent event) {
 
+    }
+ @SubscribeEvent
+  public static void loadCompleteEvent(FMLLoadCompleteEvent event){
+     ModOreGen.generateOre();
     }
 
     public static class MoreModItemGroup extends ItemGroup {
