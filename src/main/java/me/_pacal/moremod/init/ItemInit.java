@@ -18,16 +18,17 @@ import java.util.function.Supplier;
 @ObjectHolder(MoreMod.MOD_ID)
 public class ItemInit {
     public static final Item ruby = null;
-    public static final Item ruby_sword = null;
     public static final Item ruby_cookie = null;
+    public static final Item ruby_sword = null;
     public static final Item ruby_pickaxe = null;
     public static final Item ruby_axe = null;
     public static final Item ruby_shovel = null;
+    public static final Item ruby_hoe = null;
     public static final Item ruby_double_sword = null;
     public static final Item ruby_doubel_pickaxe = null;
     public static final Item ruby_double_axe = null;
     public static final Item ruby_double_shovel = null;
-
+    public static final Item ruby_double_hoe = null;
     @SubscribeEvent
     public static void registerItems(final RegistryEvent.Register<Item> event) {
         event.getRegistry().register(new Item(new Item.Properties().
@@ -48,6 +49,8 @@ public class ItemInit {
                 group(MoreMod.MoreModItemGroup.TAB)).setRegistryName("ruby_axe"));
         event.getRegistry().register(new ShovelItem(ModItemTier.RUBY, 5.5F, -2.0F, new Item.Properties().
                 group(MoreMod.MoreModItemGroup.TAB)).setRegistryName("ruby_shovel"));
+        event.getRegistry().register(new HoeItem(ModItemTier.RUBY, -2.0F, new Item.Properties().
+                group(MoreMod.MoreModItemGroup.TAB)).setRegistryName("ruby_hoe"));
         //double Tools
         event.getRegistry().register(new SwordItem(ModItemTier.DOUBLERUBY, 8, -0.8F, new Item.Properties().
                 group(MoreMod.MoreModItemGroup.TAB)).setRegistryName("ruby_double_sword"));
@@ -57,13 +60,15 @@ public class ItemInit {
                 group(MoreMod.MoreModItemGroup.TAB)).setRegistryName("ruby_double_axe"));
         event.getRegistry().register(new ShovelItem(ModItemTier.DOUBLERUBY, 6.5F, -2.0F, new Item.Properties().
                 group(MoreMod.MoreModItemGroup.TAB)).setRegistryName("ruby_double_shovel"));
+        event.getRegistry().register(new HoeItem(ModItemTier.DOUBLERUBY, -2.0F, new Item.Properties().
+                group(MoreMod.MoreModItemGroup.TAB)).setRegistryName("ruby_double_hoe"));
     }
 
     public enum ModItemTier implements IItemTier {
-        RUBY(4, 3000, 15.0F, 1, 100, () -> {
+        RUBY(4, 3122, 15.0F, 1, 100, () -> {
             return Ingredient.fromItems(ItemInit.ruby);
         }),
-        DOUBLERUBY(4, 6000, 25.0F, 1, 150, () -> {
+        DOUBLERUBY(4, 6244, 30.0F, 1, 150, () -> {
             return Ingredient.fromItems(ItemInit.ruby);
         });
 
