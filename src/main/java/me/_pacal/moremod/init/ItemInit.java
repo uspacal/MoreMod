@@ -29,6 +29,7 @@ public class ItemInit {
     public static final Item ruby_double_axe = null;
     public static final Item ruby_double_shovel = null;
     public static final Item ruby_double_hoe = null;
+
     @SubscribeEvent
     public static void registerItems(final RegistryEvent.Register<Item> event) {
         event.getRegistry().register(new Item(new Item.Properties().

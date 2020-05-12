@@ -1,5 +1,7 @@
 {
   "variants": {
-    "": {"model":  "moremod:block/weird_cube"}
+    "": {
+      "model": "moremod:block/weird_cube"
+    }
   }
 }

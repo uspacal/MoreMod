@@ -23,28 +23,29 @@ public class BlockInit {
     public static final Block weird_cube = null;
 
     @SubscribeEvent
-    public static  void registerBlock(final RegistryEvent.Register<Block> event) {
+    public static void registerBlock(final RegistryEvent.Register<Block> event) {
         //Ruby Block
-        event.getRegistry().register(new Block( Block.Properties.create(Material.IRON).
+        event.getRegistry().register(new Block(Block.Properties.create(Material.IRON).
                 hardnessAndResistance(7, 50).
                 harvestTool(ToolType.PICKAXE).
                 harvestLevel(3).
                 sound(SoundType.STONE)).setRegistryName("ruby_block"));
         //Ruby Ore
-        event.getRegistry().register(new Block( Block.Properties.create(Material.IRON).
+        event.getRegistry().register(new Block(Block.Properties.create(Material.IRON).
                 hardnessAndResistance(7, 1200).
                 harvestTool(ToolType.PICKAXE).
                 harvestLevel(3).
                 sound(SoundType.STONE)).setRegistryName("ruby_ore"));
         // Weird Cube
-        event.getRegistry().register(new Block( Block.Properties.create(Material.IRON).
+        event.getRegistry().register(new Block(Block.Properties.create(Material.IRON).
                 hardnessAndResistance(1000, 5000).
                 harvestTool(ToolType.AXE).
                 harvestLevel(3).
                 sound(SoundType.METAL)).setRegistryName("weird_cube"));
     }
+
     @SubscribeEvent
-    public static  void registerBlockItems(final RegistryEvent.Register<Item> event) {
+    public static void registerBlockItems(final RegistryEvent.Register<Item> event) {
         //Ruby Block
         event.getRegistry().register(new BlockItem(ruby_block, new Item.Properties().group(MoreMod.MoreModItemGroup.TAB))
                 .setRegistryName("ruby_block"));

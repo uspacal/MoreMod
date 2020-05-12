@@ -1,5 +1,7 @@
 {
   "variants": {
-    "": {"model":  "moremod:block/ruby_ore"}
+    "": {
+      "model": "moremod:block/ruby_ore"
+    }
   }
 }
